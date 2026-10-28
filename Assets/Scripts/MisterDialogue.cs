@@ -14,8 +14,6 @@ public class MisterDialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueTextComponent;
     [SerializeField] private TextMeshProUGUI nameTextComponent;
     [SerializeField] private TextMeshProUGUI guideTextComponent;
-    [SerializeField] private Image bg;
-    [SerializeField] private Image fg;
 
     [SerializeField] private GameObject choicesObj;
 
@@ -23,8 +21,6 @@ public class MisterDialogue : MonoBehaviour
     [SerializeField] private GameObject choiceButtonPrefab;
 
     [Header("General")]
-    //public List<Speaker> characters = new();
-    [SerializeField] int day;
 
     [Header("Dialogue")]
     public Line[] lines;
@@ -32,14 +28,11 @@ public class MisterDialogue : MonoBehaviour
 
     [Header("Extra settings")]
     public string guideText;
-    public string rewindText;
 
     [Header("Debug (if turned on)")]
     private int index;
     private bool isTyping;
     public bool choicesOn;
-    private bool badEnd = false;
-    private int badInt = 0;
 
     void Start()
     {
@@ -47,14 +40,6 @@ public class MisterDialogue : MonoBehaviour
         guideTextComponent.text = string.Empty;
 
         List<GameObject> charsToHide = new List<GameObject>();
-
-        foreach (Line line in lines)
-        {
-            foreach (GameObject obj in line.charactersToSpawn)
-            {
-                charsToHide.Add(obj);
-            }
-        }
 
         foreach (GameObject obj in charsToHide)
         {
@@ -65,30 +50,12 @@ public class MisterDialogue : MonoBehaviour
     }
     void Update()
     {
-        if (!choicesOn && !badEnd)
+        if (!choicesOn)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
             {
                 Debug.Log("Click detected");
                 NextLine();
-            }
-        }
-        else if (badEnd)
-        {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
-            {
-                badInt++;
-                Debug.Log("Bad Click detected");
-                if (badInt == 1)
-                {
-                    Line line = new Line();
-                    line.text = rewindText;
-                    StartCoroutine(TypeLine(line));
-                }
-                if (badInt == 2)
-                {
-                    StartCoroutine(RewindDay());
-                }
             }
         }
     }
@@ -176,27 +143,6 @@ public class MisterDialogue : MonoBehaviour
                     lines[index].activeSpeaker.UnlightMe();
                 }
             }
-            if (lines.Length != index + 1)
-            {
-                if (lines[index + 1].newBg != null)
-                {
-                    bg.sprite = lines[index + 1].newBg;
-                }
-                if (lines[index + 1].newFg != null)
-                {
-                    fg.sprite = lines[index + 1].newFg;
-                }
-
-                foreach (GameObject obj in lines[index + 1].charactersToSpawn)
-                {
-                    obj.SetActive(true);
-                }
-
-                foreach (GameObject obj in lines[index + 1].charactersToDespawn)
-                {
-                    obj.SetActive(false);
-                }
-            }
             
             StopAllCoroutines();
 
@@ -252,10 +198,6 @@ public class MisterDialogue : MonoBehaviour
             //StopAllCoroutines();
             guideTextComponent.text = string.Empty;
             dialogueTextComponent.text = string.Empty;
-            if (badChoice)
-            {
-                badEnd = true;
-            }
             StartCoroutine(TypeLine(reply));
             choicesOn = false;
             index++;
@@ -275,12 +217,6 @@ public class MisterDialogue : MonoBehaviour
         }
     }
 
-    IEnumerator RewindDay()
-    {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene($"Day {day}");
-    }
-
     public void ChoiceSelected(Choice choice = null)
     {
         if (choice.isBad)
@@ -292,11 +228,6 @@ public class MisterDialogue : MonoBehaviour
             NextLine(true, choice.reply);
         }
     }
-
-    public void Test(GameObject gameObject = null)
-    {
-        Debug.Log(gameObject.name);
-    }
 }
 
 [System.Serializable]
@@ -304,17 +235,11 @@ public class Line
 {
     [Header("General settings")]
     public Type type;
-    public List<GameObject> charactersToSpawn = new();
-    public List<GameObject> charactersToDespawn = new();
 
     [Header("Line type settings")]
     public string text;
     public Speaker activeSpeaker;
     public float textSpeed = 0.05f;
-
-    [Header("Scene settings")]
-    public Sprite newBg;
-    public Sprite newFg;
 
     [Header("Choice type settings")]
     public List<Choice> choices = new();
