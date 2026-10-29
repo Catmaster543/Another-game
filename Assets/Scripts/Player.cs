@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     bool lookingAtObj;
 
     float timer;
+    float rateTimer;
     void Start()
     {
 
@@ -31,7 +32,14 @@ public class Player : MonoBehaviour
                 lookingAtObj = true;
                 if (obj != lastObj)
                 {
-                    interactTextObj.GetComponent<TextMeshProUGUI>().text = obj.GetComponent<IInteractable>().prompt;
+                    if (obj.TryGetComponent<IInteractable>(out var interactable))
+                    {
+                        interactTextObj.GetComponent<TextMeshProUGUI>().text = interactable.prompt;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"{obj.name} does not have the IInteractible class as its base!");
+                    }
                 }
                 
                 StartCoroutine(HideInteraction());
@@ -46,6 +54,11 @@ public class Player : MonoBehaviour
         else
         {
             timer += Time.deltaTime;
+        }
+        
+        if (rateTimer <= 0.2f)
+        {
+            rateTimer += Time.deltaTime;
         }
     }
 
@@ -68,16 +81,20 @@ public class Player : MonoBehaviour
 
     public void Interact()
     {
-        GameObject obj = ShootRay();
-        if (obj != null)
+        if (rateTimer >= 0.2f)
         {
-            if (obj.TryGetComponent<IInteractable>(out var interactable))
+            rateTimer = 0;
+            GameObject obj = ShootRay();
+            if (obj != null)
             {
-                interactable.Interact(this);
-            }
-            else
-            {
-                Debug.LogWarning($"{obj.name} doesn't have the IInteractable class declared!");
+                if (obj.TryGetComponent<IInteractable>(out var interactable))
+                {
+                    interactable.Interact(this);
+                }
+                else
+                {
+                    Debug.LogWarning($"{obj.name} doesn't have the IInteractable class declared!");
+                }
             }
         }
     }
