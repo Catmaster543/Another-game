@@ -9,10 +9,17 @@ public class Speaker : MonoBehaviour, IInteractable
     public void Interact(Player player)
     {
         Debug.Log("Blah blah blah");
+
+        storyManager.UpdateObjective("You did it, good job!");
     }
 
     public string name;
     public Speaker speakersObject;
-    public Sprite quietSprite;
-    public Sprite talkSprite;
+
+    public StoryManager storyManager;
+
+    void Start()
+    {
+        storyManager = GameObject.FindGameObjectWithTag("MainManager").GetComponent<StoryManager>();
+    }
 }

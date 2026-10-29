@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     float timer;
     float rateTimer;
+
     void Start()
     {
 
