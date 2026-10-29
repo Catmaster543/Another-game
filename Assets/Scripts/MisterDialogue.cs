@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 [System.Serializable]
 public class MisterDialogue : MonoBehaviour
@@ -60,11 +61,16 @@ public class MisterDialogue : MonoBehaviour
         }
     }
 
+
     // The auto start method used on the beggining of this scene
-    void StartDialogue()
+    public void StartDialogue(Line[] newLines = null)
     {
         index = 0;
-        //StartCoroutine(TypeLine());
+        if (newLines != null)
+        {
+            lines = newLines;
+        }
+        StartCoroutine(TypeLine());
     }
 
     // The coroutine responsible for typing out text, can be interrupted
@@ -76,7 +82,6 @@ public class MisterDialogue : MonoBehaviour
             if (lines[index].activeSpeaker != null)
             {
                 nameTextComponent.text = lines[index].activeSpeaker.name;
-                lines[index].activeSpeaker.HighLightMe();
             }
             else
             {
@@ -101,7 +106,6 @@ public class MisterDialogue : MonoBehaviour
             if (line.activeSpeaker != null)
             {
                 nameTextComponent.text = line.activeSpeaker.name;
-                line.activeSpeaker.HighLightMe();
             }
             else
             {
@@ -114,11 +118,6 @@ public class MisterDialogue : MonoBehaviour
             {
                 dialogueTextComponent.text += c;
                 yield return new WaitForSeconds(textSpeed);
-            }
-
-            if (line.activeSpeaker != null)
-            {
-                line.activeSpeaker.UnlightMe();
             }
 
             isTyping = false;
@@ -135,14 +134,6 @@ public class MisterDialogue : MonoBehaviour
         if (!isReply)
         {
             Debug.Log($"Not a reply, the text is:{lines[index].text}");
-
-            if (index >= 1)
-            {
-                if (lines[index].activeSpeaker != null)
-                {
-                    lines[index].activeSpeaker.UnlightMe();
-                }
-            }
             
             StopAllCoroutines();
 
@@ -248,26 +239,6 @@ public class Line
     {
         Line,
         Choices
-    }
-}
-
-[System.Serializable]
-public class EmoSprite
-{
-    public string spriteName;
-    public Sprite sprite;
-    public Emotion emotion;
-    public enum Emotion
-    {
-        None,
-        Glad,
-        Normal,
-        Confused,
-        Angry,
-        Sad,
-        Dissappointed,
-        Scared,
-        Shocked
     }
 }
 
