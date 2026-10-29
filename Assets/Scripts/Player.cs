@@ -6,11 +6,14 @@ public class Player : MonoBehaviour
 {
     [Header("Scene References")]
     [SerializeField] GameObject interactTextObj;
+    [SerializeField] Transform holdingSpot;
 
     [Header("Settings")]
     [SerializeField] float rayRange;
     [SerializeField] string interactText;
 
+    [Header("Shared References")]
+    [SerializeField] GameObject heldObj;
     private GameObject lastObj;
     bool lookingAtObj;
 
@@ -107,5 +110,12 @@ public class Player : MonoBehaviour
         {
             interactTextObj.SetActive(false);
         }
+    }
+
+    public void PickUpInteraction(GameObject obj)
+    {
+        obj.transform.SetParent(holdingSpot);
+        obj.transform.position = holdingSpot.position;
+        heldObj = obj;
     }
 }
