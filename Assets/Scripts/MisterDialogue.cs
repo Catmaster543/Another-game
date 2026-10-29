@@ -39,7 +39,7 @@ public class MisterDialogue : MonoBehaviour
     {
         dialogueTextComponent.text = string.Empty;
         guideTextComponent.text = string.Empty;
-
+        
         List<GameObject> charsToHide = new List<GameObject>();
 
         foreach (GameObject obj in charsToHide)
@@ -66,6 +66,9 @@ public class MisterDialogue : MonoBehaviour
     public void StartDialogue(Line[] newLines = null)
     {
         index = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        dialogBox.SetActive(true);
         if (newLines != null)
         {
             lines = newLines;
@@ -159,6 +162,9 @@ public class MisterDialogue : MonoBehaviour
                     }
                     else
                     {
+                        dialogBox.SetActive(false);
+                        Cursor.visible = false;
+                        Cursor.lockState = CursorLockMode.Locked;
                         //dialogueTextComponent.text = string.Empty;
                     }
                 }

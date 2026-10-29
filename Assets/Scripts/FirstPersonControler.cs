@@ -18,6 +18,7 @@ public class FirstPersonControler : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private PlayerInputHandler playerInputHandler;
+    [SerializeField] private Player player;
 
     private Vector3 currentMovement;
     private float VerticalRotation;
@@ -33,6 +34,7 @@ public class FirstPersonControler : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
+        HandleInteracting();
     }
 
     private Vector3 CalculateWorldDirection()
@@ -42,6 +44,15 @@ public class FirstPersonControler : MonoBehaviour
         return worldDirection.normalized;
     }
 
+    private void HandleInteracting()
+    {
+        if (playerInputHandler.InteractionTriggered)
+        {
+            player.Interact();
+        }
+    }
+
+    /*
     private void HandleJumping()
     {
         if (characterController.isGrounded)
@@ -58,6 +69,7 @@ public class FirstPersonControler : MonoBehaviour
             currentMovement.y += Physics.gravity.y * gravityMultiplier * Time.deltaTime;
         }
     }
+    */
 
     private void HandleMovement()
     {
@@ -65,7 +77,7 @@ public class FirstPersonControler : MonoBehaviour
         currentMovement.x = worldDirection.x * CurrentSpeed;
         currentMovement.z = worldDirection.z * CurrentSpeed;
 
-        HandleJumping();
+        //HandleJumping();
         characterController.Move(currentMovement * Time.deltaTime);
     }
 

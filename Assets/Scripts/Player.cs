@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
                 lookingAtObj = true;
                 if (obj != lastObj)
                 {
-                    interactTextObj.GetComponent<TextMeshProUGUI>().text = $"{interactText} {obj.name}";
+                    interactTextObj.GetComponent<TextMeshProUGUI>().text = obj.GetComponent<IInteractable>().prompt;
                 }
                 
                 StartCoroutine(HideInteraction());
@@ -64,6 +64,22 @@ public class Player : MonoBehaviour
         }
         //Debug.Log("Nothing hit, or the object is out of range. \n(Have you assigned the \"Interactable\" tag to the object?)");
         return null;
+    }
+
+    public void Interact()
+    {
+        GameObject obj = ShootRay();
+        if (obj != null)
+        {
+            if (obj.TryGetComponent<IInteractable>(out var interactable))
+            {
+                interactable.Interact(this);
+            }
+            else
+            {
+                Debug.LogWarning($"{obj.name} doesn't have the IInteractable class declared!");
+            }
+        }
     }
 
     IEnumerator HideInteraction()

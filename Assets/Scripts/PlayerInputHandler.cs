@@ -14,21 +14,25 @@ public class PlayerInputHandler : MonoBehaviour
     [Header("Action Name References")]
     [SerializeField] private string movement = "Movement";
     [SerializeField] private string rotation = "Rotation";
-    [SerializeField] private string jump = "Jump";
+    //[SerializeField] private string jump = "Jump";
     [SerializeField] private string sprint = "Sprint";
+    [SerializeField] private string interact = "Interact";
 
     private InputAction movementAction;
     private InputAction rotationAction;
     private InputAction jumpAction;
     private InputAction sprintAction;
+    private InputAction interactAction;
 
     public Vector2 MovementInput { get; private set; }
 
     public Vector2 RotationInput { get; private set; }
 
-    public bool JumpTriggered { get; private set; }
+    //public bool JumpTriggered { get; private set; }
 
     public bool SprintTriggered { get; private set; }
+
+    public bool InteractionTriggered { get; private set; }
 
     private void Awake()
     {
@@ -36,8 +40,9 @@ public class PlayerInputHandler : MonoBehaviour
 
         movementAction = mapReference.FindAction(movement);
         rotationAction = mapReference.FindAction(rotation);
-        jumpAction = mapReference.FindAction(jump);
+        //jumpAction = mapReference.FindAction(jump);
         sprintAction = mapReference.FindAction(sprint);
+        interactAction = mapReference.FindAction(interact);
 
         SubscribeActionValuesToInputEvents();
     }
@@ -50,11 +55,14 @@ public class PlayerInputHandler : MonoBehaviour
         rotationAction.performed += inputInfo => RotationInput = inputInfo.ReadValue<Vector2>();
         rotationAction.canceled += inputInfo => RotationInput = Vector2.zero;
 
-        jumpAction.performed += inputInfo => JumpTriggered = true;
-        jumpAction.canceled += inputInfo => JumpTriggered = false;
+        //jumpAction.performed += inputInfo => JumpTriggered = true;
+        //jumpAction.canceled += inputInfo => JumpTriggered = false;
 
         sprintAction.performed += inputInfo => SprintTriggered = true;
         sprintAction.canceled += inputInfo => SprintTriggered = false;
+
+        interactAction.performed += inputInfo => InteractionTriggered = true;
+        interactAction.canceled += inputInfo => InteractionTriggered = false;
     }
 
     private void OnEnable()

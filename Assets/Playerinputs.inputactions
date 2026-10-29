@@ -43,7 +43,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Bite",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "6b0c9cf7-3490-42f6-b8ec-7faed5d47992",
                     "expectedControlType": "",
@@ -148,7 +148,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Bite",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
