@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - MainManager
+  - IntroManager
   layers:
   - Default
   - TransparentFX
