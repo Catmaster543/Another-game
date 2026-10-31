@@ -5,7 +5,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void PlayButtonPress()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("IntroScene");
     }
 
     public void QuitButtonPress()
