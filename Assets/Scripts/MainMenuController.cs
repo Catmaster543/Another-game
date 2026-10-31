@@ -3,9 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField] Animator mainMenuAnimator;
     public void PlayButtonPress()
     {
-        SceneManager.LoadScene("IntroScene");
+        mainMenuAnimator.SetTrigger("Play");
     }
 
     public void QuitButtonPress()
