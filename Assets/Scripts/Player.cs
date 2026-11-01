@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
                         Debug.LogWarning($"{obj.name} does not have the IInteractible class as its base!");
                     }
                 }
-                
+
                 StartCoroutine(HideInteraction());
                 lastObj = obj;
             }
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        
+
         if (rateTimer <= 0.2f)
         {
             rateTimer += Time.deltaTime;
@@ -124,6 +124,16 @@ public class Player : MonoBehaviour
             obj.transform.position = holdingSpot.position;
             heldObj = obj;
             isHoldingObj = true;
+        }
+    }
+    
+    public void DropInteraction(GameObject obj)
+    {
+        if (isHoldingObj == true)
+        { 
+            obj.transform.SetParent(null);
+            heldObj = null;
+            isHoldingObj = false;
         }
     }
 }
