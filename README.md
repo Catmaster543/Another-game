@@ -52,6 +52,7 @@ This time, we figured the game will work better downloaded\
 ~~WEB or DOWNLOAD~~\
 ~~› WEB - May be bit wonky~~\
 › DOWNLOAD - More stable\
+https://cat-master543.itch.io/another-game
 < / >
 
 ## 🗁Who to thank for this masterpiece:
