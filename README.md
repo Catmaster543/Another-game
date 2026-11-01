@@ -15,15 +15,50 @@ Basic buttons\
 › Play\
 › Quit
 
+### Movement
+› W - forward\
+› S - Back\
+› A - Left\
+› D - Right\
+< / >
+
+### Pick up Items
+› You can pick up some items\
+› You can carry the items around\
+› You can only hold one item at a time
+
+### Drop items
+› You can drop the items that you picked up\
+› The items will.. levitate.. where you left them\
+› You can drop items by pressing 'Q'
+
 ### Intro animation
 Somewhat explains the main premise\
-› kicks off the story\
+› kicks off the story
+
+### Introduction dialog
+› You learn some stuff about the story\
+› You learn your first objective
+
+### Second objective
+› You get more dialog about the situation\
+› You get another objective - this time more player imput needed
+
 < / >
 ## 🗁How to play
 Visit our Itch.io page\
-You will get a choice\
-WEB or DOWNLOAD\
-› WEB - May be bit wonky\
+~~You will get a choice~~\
+This time, we figured the game will work better downloaded\
+~~WEB or DOWNLOAD~~\
+~~› WEB - May be bit wonky~~\
 › DOWNLOAD - More stable\
 < / >
-### MORE TO BE ADDED ↻
+
+## 🗁Who to thank for this masterpiece:
+<img width="420" height="533" alt="Untitled_Artwork" src="https://github.com/user-attachments/assets/c15ceea2-89ae-4644-9b6f-2c56f388fa24" /><img width="297" height="533" alt="Aaa" src="https://github.com/user-attachments/assets/9c702e99-bbf0-44a2-8a0d-ff84a848192d" />
+
+### ִ----------------- Fiskerz [Catmaster543] --------------- FishyDrawer [Fliculka] -----------------
+< / >
+
+### MAY BE UPDATED LATER ↻
+Who knows what will the next few weeks bring >-<
