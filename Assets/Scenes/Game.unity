@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 171263571}
   - component: {fileID: 171263570}
   - component: {fileID: 171263575}
+  - component: {fileID: 171263576}
   m_Layer: 0
   m_Name: Test Player
   m_TagString: Untagged
@@ -349,6 +350,21 @@ MonoBehaviour:
   rayRange: 10
   interactText: Click to interact with
   heldObj: {fileID: 0}
+--- !u!114 &171263576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171263568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcea3018cf53e58408218991bdce98ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Speaker
+  name: You
+  speakersObject: {fileID: 171263576}
+  storyManager: {fileID: 628545930}
 --- !u!1 &186245884
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,33 +801,28 @@ MonoBehaviour:
   choiceButtonPrefab: {fileID: 1634265338617419264, guid: d4ec8f4f3bf36e143b5227fe6653c530, type: 3}
   lines:
   - type: 0
-    text: 
-    activeSpeaker: {fileID: 811442950}
+    text: What...
+    activeSpeaker: {fileID: 171263576}
     textSpeed: 0
     choices: []
   - type: 0
-    text: Hiii, it's me, dev!
-    activeSpeaker: {fileID: 150829266}
+    text: Where.. am I?
+    activeSpeaker: {fileID: 171263576}
     textSpeed: 0
     choices: []
   - type: 0
-    text: Hey dev, look whos here?
-    activeSpeaker: {fileID: 811442950}
+    text: And why do I feel-
+    activeSpeaker: {fileID: 171263576}
     textSpeed: 0
     choices: []
   - type: 0
-    text: Nahh no way
-    activeSpeaker: {fileID: 150829266}
+    text: ..Different..?
+    activeSpeaker: {fileID: 171263576}
     textSpeed: 0
     choices: []
   - type: 0
-    text: You know I'm the better dev, right?
-    activeSpeaker: {fileID: 150829266}
-    textSpeed: 0
-    choices: []
-  - type: 0
-    text: Sure, in your dreams!
-    activeSpeaker: {fileID: 811442950}
+    text: I have to figure out what the hell just happened..
+    activeSpeaker: {fileID: 171263576}
     textSpeed: 0
     choices: []
   guideText: Click to continue ->
@@ -829,6 +840,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   objectiveText: {fileID: 1351730423}
+  objectiveAnimator: {fileID: 1351730425}
+  uniAnimator: {fileID: 2042415693}
+  stages:
+  - name: Stage1
+    method:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 628545930}
+          m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+          m_MethodName: Stage1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &646258346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &805681628
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2502,6 +2532,7 @@ GameObject:
   - component: {fileID: 1351730422}
   - component: {fileID: 1351730424}
   - component: {fileID: 1351730423}
+  - component: {fileID: 1351730425}
   m_Layer: 5
   m_Name: Objective Text
   m_TagString: Untagged
@@ -2548,7 +2579,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: No objective
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2628,6 +2661,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351730421}
   m_CullTransparentMesh: 1
+--- !u!95 &1351730425
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351730421}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 17723802197492a4f8684b9ad30ecf47, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1354485953 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7029948723529949830, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
@@ -2702,7 +2757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

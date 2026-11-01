@@ -35,6 +35,7 @@ public class MisterDialogue : MonoBehaviour
     private int index;
     private bool isTyping;
     public bool choicesOn;
+    bool active;
 
     void Start()
     {
@@ -45,12 +46,15 @@ public class MisterDialogue : MonoBehaviour
     }
     void Update()
     {
-        if (!choicesOn)
+        if (active)
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            if (!choicesOn)
             {
-                Debug.Log("Click detected");
-                NextLine();
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
+                {
+                    Debug.Log("Click detected");
+                    NextLine();
+                }
             }
         }
     }
@@ -64,6 +68,7 @@ public class MisterDialogue : MonoBehaviour
         Cursor.visible = true;
         GetComponent<PlayerInputHandler>().enabled = false;
         dialogObj.SetActive(true);
+        active = true;
         if (newLines != null)
         {
             lines = newLines;
@@ -162,7 +167,9 @@ public class MisterDialogue : MonoBehaviour
                         Cursor.lockState = CursorLockMode.Locked;
                         GetComponent<PlayerInputHandler>().enabled = true;
                         dialogObj.SetActive(false);
-
+                        GetComponent<StoryManager>().Progress();
+                        active = false;
+                        Debug.Log("Dialog finished");
                         //dialogueTextComponent.text = string.Empty;
                     }
                 }
