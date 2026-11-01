@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     [Header("Scene References")]
     [SerializeField] GameObject interactTextObj;
     [SerializeField] Transform holdingSpot;
+    [SerializeField] StoryManager storyManager;
+    [SerializeField] MisterDialogue misterDialogue;
+    [SerializeField] private LineObj lineObjStage2;
 
     [Header("Settings")]
     [SerializeField] float rayRange;
@@ -19,8 +22,8 @@ public class Player : MonoBehaviour
 
     float timer;
     float rateTimer;
-    //Idfk where to put it, so it'll just chill here - it's so u can only hold one item - tho we have no drop option, so ur kinda stuck with the one u pick up first-
     bool isHoldingObj = false;
+    
     void Start()
     {
 
@@ -127,13 +130,19 @@ public class Player : MonoBehaviour
         }
     }
     
-    public void DropInteraction(GameObject obj)
+    public void DropInteraction()
     {
         if (isHoldingObj == true)
         { 
-            obj.transform.SetParent(null);
+            heldObj.transform.SetParent(null);
             heldObj = null;
             isHoldingObj = false;
         }
+    }
+
+    public IEnumerator WaitForLookingAround()
+    {
+        yield return new WaitForSeconds(15);
+        misterDialogue.StartDialogue(lineObjStage2.lines);
     }
 }

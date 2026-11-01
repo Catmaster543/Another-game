@@ -68,6 +68,7 @@ public class MisterDialogue : MonoBehaviour
         Cursor.visible = true;
         GetComponent<PlayerInputHandler>().enabled = false;
         dialogObj.SetActive(true);
+        dialogBox.SetActive(true);
         active = true;
         if (newLines != null)
         {

@@ -10,6 +10,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private Animator objectiveAnimator;
     [SerializeField] private Animator uniAnimator;
     [SerializeField] private Stage[] stages;
+    [SerializeField] private Player player;
 
     [Header("Shared References")]
     public int progress { get; private set; } = -1;
@@ -55,6 +56,13 @@ public class StoryManager : MonoBehaviour
     {
         uniAnimator.SetTrigger("ExitML");
         StartCoroutine(UpdateObjective("Take a look around."));
+        StartCoroutine(player.WaitForLookingAround());
+    }
+
+    public void Stage2()
+    {
+        //Bind this void on LeManager's StoryManagers stages
+        //Just make a new Stage, select LeManager as an object and select this void
     }
     #endregion
 }

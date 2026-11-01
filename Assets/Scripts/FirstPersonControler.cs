@@ -35,6 +35,7 @@ public class FirstPersonControler : MonoBehaviour
         HandleMovement();
         HandleRotation();
         HandleInteracting();
+        HandleDropping();
     }
 
     private Vector3 CalculateWorldDirection()
@@ -52,7 +53,14 @@ public class FirstPersonControler : MonoBehaviour
         }
     }
 
-    
+    private void HandleDropping()
+    {
+        if (playerInputHandler.DropTriggered)
+        {
+            player.DropInteraction();
+        }
+    }
+
     private void HandleJumping()
     {
         if (characterController.isGrounded)

@@ -347,6 +347,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   interactTextObj: {fileID: 1431842402}
   holdingSpot: {fileID: 766592208}
+  storyManager: {fileID: 628545930}
+  misterDialogue: {fileID: 628545929}
+  lineObjStage2: {fileID: 2141395209}
   rayRange: 10
   interactText: Click to interact with
   heldObj: {fileID: 0}
@@ -765,6 +768,7 @@ MonoBehaviour:
   jump: Jump
   sprint: Sprint
   interact: Interact
+  drop: Drop
 --- !u!4 &628545928
 Transform:
   m_ObjectHideFlags: 0
@@ -859,6 +863,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  player: {fileID: 171263575}
 --- !u!1 &646258346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1249,160 @@ Transform:
   m_Children: []
   m_Father: {fileID: 171263574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &794799778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 794799782}
+  - component: {fileID: 794799781}
+  - component: {fileID: 794799780}
+  - component: {fileID: 794799779}
+  - component: {fileID: 794799783}
+  - component: {fileID: 794799784}
+  m_Layer: 0
+  m_Name: WardrobeDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &794799779
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794799778}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &794799780
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794799778}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &794799781
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794799778}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &794799782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794799778}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.25746512, z: -0, w: 0.9662876}
+  m_LocalPosition: {x: 1.426, y: 2.554, z: -4.19053}
+  m_LocalScale: {x: 2.7239, y: 4.2022533, z: 5.0881}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -29.839, z: 0}
+--- !u!114 &794799783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794799778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96378306dd1acb544a62b635762ca88f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WardrobeDetector
+  target: {fileID: 831471534}
+--- !u!54 &794799784
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794799778}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &805681627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,7 +1674,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1587,7 +1746,7 @@ Transform:
   m_GameObject: {fileID: 831471534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36, y: 0.82, z: -2.9}
+  m_LocalPosition: {x: -9.121, y: 1.493, z: -3.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1837,7 +1996,7 @@ Transform:
   m_GameObject: {fileID: 905913568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.14, y: 1.51, z: -2.78}
+  m_LocalPosition: {x: -9.14, y: 1.51, z: -2.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1962,7 +2121,7 @@ Transform:
   m_GameObject: {fileID: 1021956620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.65, y: 2.67, z: -13.84}
+  m_LocalPosition: {x: 1.65, y: -1.62, z: -13.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1995,7 +2154,7 @@ GameObject:
   - component: {fileID: 1047883112}
   m_Layer: 0
   m_Name: TV
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2339,7 +2498,7 @@ Transform:
   m_GameObject: {fileID: 1064237520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.71, y: 1.2, z: -13.6}
+  m_LocalPosition: {x: -8.71, y: -1.787, z: -13.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3038,6 +3197,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4e8eae99957213b4d8263f20f7445bb8, type: 2}
+    - target: {fileID: -7146521406498821007, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -6093592463355912122, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -3535,7 +3698,7 @@ Transform:
   m_GameObject: {fileID: 2119015110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.93, y: 1.2, z: -7.13}
+  m_LocalPosition: {x: -6.93, y: -1.956, z: -7.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3556,6 +3719,162 @@ MonoBehaviour:
   name: Edwin
   speakersObject: {fileID: 0}
   storyManager: {fileID: 0}
+--- !u!1 &2141395207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2141395208}
+  - component: {fileID: 2141395209}
+  m_Layer: 0
+  m_Name: Lines Stage2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2141395208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141395207}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.71551, y: 0.74127, z: -0.98341}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2141395209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141395207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ec624d96641ec4997531c7eee1509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LineObj
+  lines:
+  - type: 0
+    text: ..is this..
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: My GAME??!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: Oh no..
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: There's no way I'm inside my own game
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: I must have fallen asleep or something!!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: I wanna wake up!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: NOW!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: ...
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: I ain't waking up, am I?
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: That's..
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: Horrible
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: How am I gonna even get out??
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: ...
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: this is some real pickle I've gotten myself into again...
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: What if...
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: I caused an error?
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: That could do!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: And then the game should revert to default!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: And I'll be out of here!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: Let's see...
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: I think putting Sedwicks the ball's cousins inside the wardrobe caused
+      an error
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: Lemme do that real quick!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
 --- !u!1 &2142765922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -466329591000292508, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
@@ -3615,3 +3934,5 @@ SceneRoots:
   - {fileID: 831471539}
   - {fileID: 1553756092}
   - {fileID: 186245888}
+  - {fileID: 794799782}
+  - {fileID: 2141395208}
