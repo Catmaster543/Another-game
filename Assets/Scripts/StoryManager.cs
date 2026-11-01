@@ -61,9 +61,7 @@ public class StoryManager : MonoBehaviour
 
     public void Stage2()
     {
-        Debug.Log("Hello Stage 2");
-        //Bind this void on LeManager's StoryManagers stages
-        //Just make a new Stage, select LeManager as an object and select this void
+        StartCoroutine(UpdateObjective("Take Sedwick the ball's cousin and put him inside the wardrobe"));
     }
 
     public void Stage3()

@@ -9,7 +9,7 @@ public class WardrobeDetector : MonoBehaviour
         if (other.gameObject == target)
         {
             GameObject.FindGameObjectWithTag("MainManager").GetComponent<StoryManager>().Progress();
-            StartCoroutine(GameObject.FindGameObjectWithTag("MainManager").GetComponent<StoryManager>().UpdateObjective("I have no clue what this text is supposed to say tbh"));
+            StartCoroutine(GameObject.FindGameObjectWithTag("MainManager").GetComponent<StoryManager>().UpdateObjective("Good job!"));
 
             //Better said:
             // - Find the StoryManager using GameObject.GetComponent<*component*>()
