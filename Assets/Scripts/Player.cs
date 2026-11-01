@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
 
     float timer;
     float rateTimer;
-
+    //Idfk where to put it, so it'll just chill here - it's so u can only hold one item - tho we have no drop option, so ur kinda stuck with the one u pick up first-
+    bool isHoldingObj = false;
     void Start()
     {
 
@@ -117,8 +118,12 @@ public class Player : MonoBehaviour
 
     public void PickUpInteraction(GameObject obj)
     {
-        obj.transform.SetParent(holdingSpot);
-        obj.transform.position = holdingSpot.position;
-        heldObj = obj;
+        if (isHoldingObj == false)
+        {
+            obj.transform.SetParent(holdingSpot);
+            obj.transform.position = holdingSpot.position;
+            heldObj = obj;
+            isHoldingObj = true;
+        }
     }
 }
