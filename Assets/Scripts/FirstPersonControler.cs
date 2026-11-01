@@ -52,7 +52,7 @@ public class FirstPersonControler : MonoBehaviour
         }
     }
 
-    /*
+    
     private void HandleJumping()
     {
         if (characterController.isGrounded)
@@ -69,7 +69,7 @@ public class FirstPersonControler : MonoBehaviour
             currentMovement.y += Physics.gravity.y * gravityMultiplier * Time.deltaTime;
         }
     }
-    */
+    
 
     private void HandleMovement()
     {
@@ -77,7 +77,7 @@ public class FirstPersonControler : MonoBehaviour
         currentMovement.x = worldDirection.x * CurrentSpeed;
         currentMovement.z = worldDirection.z * CurrentSpeed;
 
-        //HandleJumping();
+        HandleJumping();
         characterController.Move(currentMovement * Time.deltaTime);
     }
 

@@ -11,6 +11,7 @@ public class MisterDialogue : MonoBehaviour
 {
     int i = 0;
     [Header("Scene references")]
+    [SerializeField] private GameObject dialogObj;
     [SerializeField] private GameObject dialogBox;
     [SerializeField] private TextMeshProUGUI dialogueTextComponent;
     [SerializeField] private TextMeshProUGUI nameTextComponent;
@@ -39,15 +40,8 @@ public class MisterDialogue : MonoBehaviour
     {
         dialogueTextComponent.text = string.Empty;
         guideTextComponent.text = string.Empty;
-        
-        List<GameObject> charsToHide = new List<GameObject>();
 
-        foreach (GameObject obj in charsToHide)
-        {
-            obj.SetActive(false);
-        }
-
-        StartDialogue();
+        //StartDialogue();
     }
     void Update()
     {
@@ -68,7 +62,8 @@ public class MisterDialogue : MonoBehaviour
         index = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        dialogBox.SetActive(true);
+        GetComponent<PlayerInputHandler>().enabled = false;
+        dialogObj.SetActive(true);
         if (newLines != null)
         {
             lines = newLines;
@@ -165,6 +160,9 @@ public class MisterDialogue : MonoBehaviour
                         dialogBox.SetActive(false);
                         Cursor.visible = false;
                         Cursor.lockState = CursorLockMode.Locked;
+                        GetComponent<PlayerInputHandler>().enabled = true;
+                        dialogObj.SetActive(false);
+
                         //dialogueTextComponent.text = string.Empty;
                     }
                 }
