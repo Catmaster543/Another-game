@@ -61,6 +61,14 @@ public class StoryManager : MonoBehaviour
 
     public void Stage2()
     {
+        Debug.Log("Hello Stage 2");
+        //Bind this void on LeManager's StoryManagers stages
+        //Just make a new Stage, select LeManager as an object and select this void
+    }
+
+    public void Stage3()
+    {
+        Debug.Log("Hello Stage 3");
         //Bind this void on LeManager's StoryManagers stages
         //Just make a new Stage, select LeManager as an object and select this void
     }
