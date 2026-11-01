@@ -111,10 +111,8 @@ public class Player : MonoBehaviour
     IEnumerator HideInteraction()
     {
         yield return new WaitForSeconds(0.2f);
-        Debug.Log("Time's up, hiding interact text");
         if (!lookingAtObj)
         {
-            Debug.Log("Hiding interact text");
             interactTextObj.SetActive(false);
         }
     }
