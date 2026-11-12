@@ -52,6 +52,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ConsoleEnter",
+                    "type": "Button",
+                    "id": "2a75de5d-41fa-4630-a1f3-08a4acedee08",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Drop",
                     "type": "Button",
                     "id": "882f11dd-7520-45e9-9f2d-4a0ed78895aa",
@@ -158,6 +167,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84202f5b-9d0c-4acd-af42-e5162fbe627c",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ConsoleEnter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

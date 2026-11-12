@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] StoryManager storyManager;
     [SerializeField] MisterDialogue misterDialogue;
     [SerializeField] private LineObj lineObjStage2;
+    [SerializeField] private GameStateManager gameStateManager;
 
     [Header("Settings")]
     [SerializeField] float rayRange;
@@ -136,6 +137,11 @@ public class Player : MonoBehaviour
             heldObj = null;
             isHoldingObj = false;
         }
+    }
+
+    public void ConsoleEnterInteraction()
+    {
+        
     }
 
     public IEnumerator WaitForLookingAround()

@@ -36,6 +36,8 @@ public class FirstPersonControler : MonoBehaviour
         HandleRotation();
         HandleInteracting();
         HandleDropping();
+        HandleConsoleEnter();
+
     }
 
     private Vector3 CalculateWorldDirection()
@@ -58,6 +60,14 @@ public class FirstPersonControler : MonoBehaviour
         if (playerInputHandler.DropTriggered)
         {
             player.DropInteraction();
+        }
+    }
+
+    private void HandleConsoleEnter()
+    {
+        if (playerInputHandler.ConsoleTriggered)
+        {
+            player.ConsoleEnterInteraction();
         }
     }
 
