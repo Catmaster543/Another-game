@@ -24,10 +24,28 @@ public class Player : MonoBehaviour
     float timer;
     float rateTimer;
     bool isHoldingObj = false;
+
+    public Player Instance;
     
+    void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
-
+        storyManager = GameObject.FindGameObjectWithTag("MainManager").GetComponent<StoryManager>();
+        gameStateManager = storyManager.refPlayer.gameStateManager;
+        interactTextObj = storyManager.refPlayer.interactTextObj;
+        storyManager = storyManager.refPlayer.storyManager;
+        misterDialogue = storyManager.refPlayer.misterDialogue;
+        lineObjStage2 = storyManager.refPlayer.lineObjStage2;
     }
 
     void Update()
@@ -141,7 +159,11 @@ public class Player : MonoBehaviour
 
     public void ConsoleEnterInteraction()
     {
-        
+        if (rateTimer >= 0.2f)
+        {
+            rateTimer = 0;
+            gameStateManager.Switch();
+        }
     }
 
     public IEnumerator WaitForLookingAround()

@@ -16,6 +16,10 @@ public class StoryManager : MonoBehaviour
     public int progress { get; private set; } = -1;
     public static StoryManager instance { get; private set; }
 
+    public GameObject playerPrefab;
+    public Transform playerSpawn;
+    public Player refPlayer;
+
     [System.Serializable]
     public class Stage
     {
@@ -25,12 +29,18 @@ public class StoryManager : MonoBehaviour
 
     void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
-        
+        Instantiate(playerPrefab);
     }
 
     public void Progress()

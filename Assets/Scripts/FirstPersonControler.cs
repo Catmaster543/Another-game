@@ -23,10 +23,13 @@ public class FirstPersonControler : MonoBehaviour
     private Vector3 currentMovement;
     private float VerticalRotation;
     private float CurrentSpeed => walkSpeed * (playerInputHandler.SprintTriggered ? sprintMultiplier : 1);
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        playerInputHandler = GameObject.FindGameObjectWithTag("MainManager").GetComponent<PlayerInputHandler>();
     }
 
     
