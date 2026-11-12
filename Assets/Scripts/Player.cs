@@ -24,16 +24,18 @@ public class Player : MonoBehaviour
     float rateTimer;
     bool isHoldingObj = false;
 
-    public Player Instance;
-    
+    public static Player Instance;
+
     void Awake()
     {
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
+
         DontDestroyOnLoad(gameObject);
     }
 

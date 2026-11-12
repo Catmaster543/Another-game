@@ -66,6 +66,7 @@ public class MisterDialogue : MonoBehaviour
         index = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Debug.Log("Disabling player input handler");
         GetComponent<PlayerInputHandler>().enabled = false;
         dialogObj.SetActive(true);
         dialogBox.SetActive(true);
@@ -166,12 +167,12 @@ public class MisterDialogue : MonoBehaviour
                         dialogBox.SetActive(false);
                         Cursor.visible = false;
                         Cursor.lockState = CursorLockMode.Locked;
+                        Debug.Log("Enabling player input handler");
                         GetComponent<PlayerInputHandler>().enabled = true;
                         dialogObj.SetActive(false);
                         GetComponent<StoryManager>().Progress();
                         active = false;
                         Debug.Log("Dialog finished");
-                        //dialogueTextComponent.text = string.Empty;
                     }
                 }
             }

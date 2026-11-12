@@ -3,9 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
-    public GameStateManager Instance;
+    public static GameStateManager Instance;
 
     public StoryManager storyManager;
+    public UIManager uiManager;
 
     public CurrentGameState currentGameState;
     void Start()

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 15498016}
   m_Layer: 0
   m_Name: UI
-  m_TagString: Untagged
+  m_TagString: UIManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,6 +168,7 @@ MonoBehaviour:
   interactTextObj: {fileID: 1431842402}
   uniAnimator: {fileID: 2042415693}
   lineObjStage2: {fileID: 2141395209}
+  lineLib: {fileID: 0}
   misterDialogue: {fileID: 628545929}
   objectiveText: {fileID: 1351730423}
   objectiveAnimator: {fileID: 1351730425}
@@ -201,8 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ee269bbf30c2249b887ab9507bf301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameStateManager
-  Instance: {fileID: 0}
   storyManager: {fileID: 628545930}
+  uiManager: {fileID: 15498016}
   currentGameState: 0
 --- !u!4 &124553632
 Transform:
@@ -266,17 +267,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &171263575 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 958893196193452058, guid: 86e0d42578f2407439c16c8c6f244488, type: 3}
-  m_PrefabInstance: {fileID: 5292981230329368213}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5292981230329368214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c85a6f1e6a71b4da0341c3645a6ce0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!114 &171263576 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1079054108279505354, guid: 86e0d42578f2407439c16c8c6f244488, type: 3}
@@ -817,7 +807,6 @@ MonoBehaviour:
   uiManager: {fileID: 15498016}
   playerPrefab: {fileID: 6093808573900384657, guid: 86e0d42578f2407439c16c8c6f244488, type: 3}
   playerSpawn: {fileID: 124553632}
-  refPlayer: {fileID: 171263575}
 --- !u!1 &649526608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,6 +2761,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4328ee1a42a914409d4e103af0daf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractibleItem
+--- !u!1 &1379508383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379508384}
+  - component: {fileID: 1379508385}
+  m_Layer: 0
+  m_Name: LineLib
+  m_TagString: LineLib
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1379508384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379508383}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.45181, y: -1.20096, z: -9.91757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1379508385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379508383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c1a9bf461ba3845baf813e7d3def60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LineLib
+  linesObjStage2: {fileID: 2141395209}
 --- !u!1 &1428085502
 GameObject:
   m_ObjectHideFlags: 0
@@ -4221,3 +4255,4 @@ SceneRoots:
   - {fileID: 1447336660}
   - {fileID: 5993332473162045369}
   - {fileID: 15498015}
+  - {fileID: 1379508384}

@@ -1,7 +1,8 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -83,11 +84,21 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnEnable()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         playercontrols.FindActionMap(actionMapName).Enable();
     }
 
     private void OnDisable()
     {
-        playercontrols.FindActionMap(actionMapName).Disable();  
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        playercontrols.FindActionMap(actionMapName).Disable();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        InputActionMap map = playercontrols.FindActionMap(actionMapName);
+
+        map.Disable();
+        map.Enable();
     }
 }

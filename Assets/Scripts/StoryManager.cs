@@ -12,11 +12,10 @@ public class StoryManager : MonoBehaviour
 
     [Header("Shared References")]
     public int progress { get; private set; } = -1;
-    public static StoryManager instance { get; private set; }
+    public static StoryManager Instance { get; private set; }
 
     public GameObject playerPrefab;
     public Transform playerSpawn;
-    public Player refPlayer;
 
     [System.Serializable]
     public class Stage
@@ -25,14 +24,16 @@ public class StoryManager : MonoBehaviour
         public UnityEvent method;
     }
 
-    void Awake()
+    private void Awake()
     {
-        if (instance != null)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
-        instance = this;
+
+        Instance = this;
+
         DontDestroyOnLoad(gameObject);
     }
 

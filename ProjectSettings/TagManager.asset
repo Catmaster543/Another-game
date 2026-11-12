@@ -10,6 +10,8 @@ TagManager:
   - UniCanvas
   - ObjectiveText
   - GameStateManager
+  - LineLib
+  - UIManager
   layers:
   - Default
   - TransparentFX
