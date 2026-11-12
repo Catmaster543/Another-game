@@ -1,16 +1,15 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [Header("Scene References")]
-    [SerializeField] GameObject interactTextObj;
     [SerializeField] Transform holdingSpot;
     [SerializeField] StoryManager storyManager;
-    [SerializeField] MisterDialogue misterDialogue;
-    [SerializeField] private LineObj lineObjStage2;
     [SerializeField] private GameStateManager gameStateManager;
+    [SerializeField] public UIManager uiManager;
 
     [Header("Settings")]
     [SerializeField] float rayRange;
@@ -40,12 +39,22 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        ReBindReferences();
+        //gameStateManager = storyManager.refPlayer.gameStateManager;
+        //interactTextObj = storyManager.refPlayer.interactTextObj;
+        //misterDialogue = storyManager.refPlayer.misterDialogue;
+        //lineObjStage2 = storyManager.refPlayer.lineObjStage2;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ReBindReferences();
+    }
+
+    public void ReBindReferences()
+    {
         storyManager = GameObject.FindGameObjectWithTag("MainManager").GetComponent<StoryManager>();
-        gameStateManager = storyManager.refPlayer.gameStateManager;
-        interactTextObj = storyManager.refPlayer.interactTextObj;
-        storyManager = storyManager.refPlayer.storyManager;
-        misterDialogue = storyManager.refPlayer.misterDialogue;
-        lineObjStage2 = storyManager.refPlayer.lineObjStage2;
+        gameStateManager = GameObject.FindGameObjectWithTag("GameStateManager").GetComponent<GameStateManager>();
     }
 
     void Update()
@@ -55,14 +64,14 @@ public class Player : MonoBehaviour
             GameObject obj = ShootRay();
             if (obj != null)
             {
-                interactTextObj.SetActive(true);
+                uiManager.interactTextObj.SetActive(true);
                 lookingAtObj = true;
                 if (obj != lastObj)
                 {
                     if (obj.TryGetComponent<IInteractable>(out var interactable))
                     {
-                        interactTextObj.SetActive(true);
-                        interactTextObj.GetComponent<TextMeshProUGUI>().text = interactable.prompt;
+                        uiManager.interactTextObj.SetActive(true);
+                        uiManager.UpdateInteractText(interactable.prompt);
                     }
                     else
                     {
@@ -132,7 +141,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         if (!lookingAtObj)
         {
-            interactTextObj.SetActive(false);
+            uiManager.interactTextObj.SetActive(false);
         }
     }
 
@@ -169,6 +178,6 @@ public class Player : MonoBehaviour
     public IEnumerator WaitForLookingAround()
     {
         yield return new WaitForSeconds(15);
-        misterDialogue.StartDialogue(lineObjStage2.lines);
+        uiManager.misterDialogue.StartDialogue(uiManager.lineObjStage2.lines);
     }
 }

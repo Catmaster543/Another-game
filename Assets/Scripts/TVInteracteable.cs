@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TVInteracteable : MonoBehaviour, IInteractable
 {
-    public TextMeshProUGUI tipText;
+    public UIManager uiManager;
+    TextMeshProUGUI tipText;
 
     #region Interacteable stuff
     public string prompt => "Turn on TV";
@@ -13,6 +14,11 @@ public class TVInteracteable : MonoBehaviour, IInteractable
         StartCoroutine(TurnOnTv());
     }
     #endregion
+
+    void Start()
+    {
+        tipText = uiManager.tipText;
+    }
 
     IEnumerator TurnOnTv()
     {

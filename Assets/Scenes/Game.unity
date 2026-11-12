@@ -119,6 +119,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15498014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15498015}
+  - component: {fileID: 15498016}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &15498015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15498014}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 298908439}
+  - {fileID: 2042415692}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &15498016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15498014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf822c34089ab949b90b5ca730f4536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  interactTextObj: {fileID: 1431842402}
+  uniAnimator: {fileID: 2042415693}
+  lineObjStage2: {fileID: 2141395209}
+  misterDialogue: {fileID: 628545929}
+  objectiveText: {fileID: 1351730423}
+  objectiveAnimator: {fileID: 1351730425}
+  tipText: {fileID: 1428085504}
 --- !u!1 &124553630
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,8 +184,8 @@ GameObject:
   - component: {fileID: 124553631}
   m_Layer: 0
   m_Name: GameStateManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: GameStateManager
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -149,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameStateManager
   Instance: {fileID: 0}
+  storyManager: {fileID: 628545930}
   currentGameState: 0
 --- !u!4 &124553632
 Transform:
@@ -435,18 +489,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298908435}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.48663}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 668699256}
   - {fileID: 818003078}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 15498015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 10.31619, y: -3.5679}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &305355598 stripped
@@ -710,9 +764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98497e164a7b98a47987718556ea285d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
-  objectiveText: {fileID: 1351730423}
-  objectiveAnimator: {fileID: 1351730425}
-  uniAnimator: {fileID: 2042415693}
   stages:
   - name: Stage1
     method:
@@ -762,7 +813,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  player: {fileID: 171263575}
+  player: {fileID: 0}
+  uiManager: {fileID: 15498016}
   playerPrefab: {fileID: 6093808573900384657, guid: 86e0d42578f2407439c16c8c6f244488, type: 3}
   playerSpawn: {fileID: 124553632}
   refPlayer: {fileID: 171263575}
@@ -1998,7 +2050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d180d427b08cc1a4d9738ae1cae1013d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TVInteracteable
-  tipText: {fileID: 1428085504}
+  uiManager: {fileID: 15498016}
 --- !u!1 &1048212231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,7 +2607,7 @@ GameObject:
   - component: {fileID: 1351730425}
   m_Layer: 5
   m_Name: Objective Text
-  m_TagString: Untagged
+  m_TagString: ObjectiveText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3527,7 +3579,7 @@ GameObject:
   - component: {fileID: 2042415693}
   m_Layer: 5
   m_Name: Uni Canvas
-  m_TagString: Untagged
+  m_TagString: UniCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3612,7 +3664,7 @@ RectTransform:
   - {fileID: 1351730422}
   - {fileID: 805681628}
   - {fileID: 1428085503}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 15498015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4152,11 +4204,9 @@ SceneRoots:
   - {fileID: 649526612}
   - {fileID: 628545928}
   - {fileID: 5292981230329368213}
-  - {fileID: 298908439}
   - {fileID: 310141110}
   - {fileID: 150829267}
   - {fileID: 811442951}
-  - {fileID: 2042415692}
   - {fileID: 1064237524}
   - {fileID: 1021956624}
   - {fileID: 2119015114}
@@ -4170,3 +4220,4 @@ SceneRoots:
   - {fileID: 124553632}
   - {fileID: 1447336660}
   - {fileID: 5993332473162045369}
+  - {fileID: 15498015}
