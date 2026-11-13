@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
 
     public int stage = 0;
 
+    Vector3 oldScale;
+
     public static Player Instance;
 
     void Awake()
@@ -163,8 +165,23 @@ public class Player : MonoBehaviour
     {
         if (isHoldingObj == false)
         {
+            oldScale = obj.transform.localScale;
             obj.transform.SetParent(holdingSpot);
             obj.transform.position = holdingSpot.position;
+            if (obj.TryGetComponent<InteractibleItem>(out InteractibleItem interactibleItem))
+            {
+                interactibleItem.rb.isKinematic = true;
+            }
+            if (oldScale.x >= 2 || oldScale.y >= 2 || oldScale.z >= 2)
+            {
+                oldScale.x = 2;
+                oldScale.y = 2;
+                oldScale.z = 2;
+            }
+            else
+            {
+                obj.transform.localScale = oldScale;
+            }
             heldObj = obj;
             isHoldingObj = true;
         }
@@ -173,10 +190,16 @@ public class Player : MonoBehaviour
     public void DropInteraction()
     {
         if (isHoldingObj == true)
-        { 
+        {
+            if (heldObj.TryGetComponent<InteractibleItem>(out InteractibleItem interactibleItem))
+            {
+                interactibleItem.rb.isKinematic = false;
+            }
+            GameObject droppedObj = heldObj;
             heldObj.transform.SetParent(null);
             heldObj = null;
             isHoldingObj = false;
+            droppedObj.transform.localScale = oldScale;
         }
     }
 

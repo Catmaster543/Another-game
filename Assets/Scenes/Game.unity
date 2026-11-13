@@ -1487,6 +1487,7 @@ GameObject:
   - component: {fileID: 831471537}
   - component: {fileID: 831471536}
   - component: {fileID: 831471535}
+  - component: {fileID: 831471540}
   m_Layer: 0
   m_Name: Sedwick the ball's cousin
   m_TagString: Interactable
@@ -1506,6 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4328ee1a42a914409d4e103af0daf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractibleItem
+  rb: {fileID: 0}
 --- !u!135 &831471536
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1599,6 +1601,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &831471540
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831471534}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &875550909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1778,7 @@ GameObject:
   - component: {fileID: 905913570}
   - component: {fileID: 905913569}
   - component: {fileID: 905913573}
+  - component: {fileID: 905913574}
   m_Layer: 0
   m_Name: Sedwick the ball
   m_TagString: Interactable
@@ -1861,6 +1891,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4328ee1a42a914409d4e103af0daf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractibleItem
+  rb: {fileID: 0}
+--- !u!54 &905913574
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905913568}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1021956620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1021956621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1986,6 +2044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4328ee1a42a914409d4e103af0daf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractibleItem
+  rb: {fileID: 0}
 --- !u!1 &1045458955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,6 +2231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TVInteracteable
   uiManager: {fileID: 15498016}
+  staticSound: {fileID: 0}
 --- !u!1 &1048212231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,7 +2378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1064237521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2424,6 +2484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4328ee1a42a914409d4e103af0daf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractibleItem
+  rb: {fileID: 0}
 --- !u!1 &1070495698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,23 +2937,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1354485953 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7029948723529949830, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
-  m_PrefabInstance: {fileID: 1553756092}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1354485957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354485953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4328ee1a42a914409d4e103af0daf3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractibleItem
 --- !u!1 &1379508383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,9 +3629,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -466329591000292508, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2142765928}
-    - targetCorrespondingSourceObject: {fileID: -7029948723529949830, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1354485957}
   m_SourcePrefab: {fileID: 100100000, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
 --- !u!4 &1553756093 stripped
 Transform:
@@ -3611,6 +3652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4328ee1a42a914409d4e103af0daf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractibleItem
+  rb: {fileID: 0}
 --- !u!65 &1580162349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3882,7 +3924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2119015111
 BoxCollider:
   m_ObjectHideFlags: 0

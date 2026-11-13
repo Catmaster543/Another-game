@@ -11,10 +11,14 @@ public class InteractibleItem : MonoBehaviour, IInteractable
     }
     #endregion
 
+    public Rigidbody rb;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
     }
+
     void Update()
     {
         
