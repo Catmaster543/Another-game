@@ -6,13 +6,21 @@ public class TVInteracteable : MonoBehaviour, IInteractable
 {
     public UIManager uiManager;
     TextMeshProUGUI tipText;
+    AudioSource staticSound;
 
     #region Interacteable stuff
     public string prompt => "Turn on TV";
-    public int stageNeeded => 2;
+    public int stageNeeded => 1;
     public void Interact(Player player)
     {
-        StartCoroutine(TurnOnTv());
+        if (player.heldObj != null)
+        {
+            StartCoroutine(TurnOnTv());
+        }
+        else
+        {
+            StartCoroutine(FailTvTurnOn());
+        }
     }
     #endregion
 
@@ -20,8 +28,14 @@ public class TVInteracteable : MonoBehaviour, IInteractable
     {
         tipText = uiManager.tipText;
     }
-
+    
     IEnumerator TurnOnTv()
+    {
+        staticSound.Play();
+        yield return new WaitForSeconds(2f);
+        //Play TV cutscene
+    }
+    IEnumerator FailTvTurnOn()
     {
         tipText.gameObject.SetActive(true);
         tipText.text = "You turn on the TV, but nothing happens..";

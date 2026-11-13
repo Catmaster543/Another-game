@@ -173,6 +173,61 @@ MonoBehaviour:
   objectiveText: {fileID: 1351730423}
   objectiveAnimator: {fileID: 1351730425}
   tipText: {fileID: 1428085504}
+--- !u!1 &28428423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28428425}
+  - component: {fileID: 28428424}
+  m_Layer: 0
+  m_Name: Lines Stage1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &28428424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28428423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ec624d96641ec4997531c7eee1509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LineObj
+  lines:
+  - type: 0
+    text: ..is this..
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: My GAME??!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+--- !u!4 &28428425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28428423}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.71551, y: 0.74127, z: -0.98341}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124553630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,6 +1982,7 @@ GameObject:
   - component: {fileID: 1047883114}
   - component: {fileID: 1047883112}
   - component: {fileID: 1047883117}
+  - component: {fileID: 1047883118}
   m_Layer: 0
   m_Name: TV
   m_TagString: Interactable
@@ -2040,6 +2096,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TVInteracteable
   uiManager: {fileID: 15498016}
+--- !u!114 &1047883118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047883111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 30.7, y: 5.61}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1048212231
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,13 +4072,12 @@ MonoBehaviour:
     textSpeed: 0
     choices: []
   - type: 0
-    text: I think putting Sedwicks the ball's cousins inside the wardrobe caused
-      an error
+    text: if I recall correctly the TV was quite buggy if I held something blue..
     activeSpeaker: {fileID: 0}
     textSpeed: 0
     choices: []
   - type: 0
-    text: Lemme do that real quick!
+    text: Lemme try that real quick!
     activeSpeaker: {fileID: 0}
     textSpeed: 0
     choices: []
@@ -4251,6 +4321,7 @@ SceneRoots:
   - {fileID: 186245888}
   - {fileID: 794799782}
   - {fileID: 2141395208}
+  - {fileID: 28428425}
   - {fileID: 124553632}
   - {fileID: 1447336660}
   - {fileID: 5993332473162045369}

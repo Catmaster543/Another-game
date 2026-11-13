@@ -210,16 +210,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c85a6f1e6a71b4da0341c3645a6ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  interactTextObj: {fileID: 0}
   holdingSpot: {fileID: 5068217098443707067}
   storyManager: {fileID: 0}
-  misterDialogue: {fileID: 0}
-  lineObjStage2: {fileID: 0}
   gameStateManager: {fileID: 0}
-  rayRange: 10
+  uiManager: {fileID: 0}
+  rayRange: 2
   interactText: Click to interact with
   heldObj: {fileID: 0}
-  Instance: {fileID: 0}
+  consoleUnlocked: 0
+  stage: 0
 --- !u!114 &1079054108279505354
 MonoBehaviour:
   m_ObjectHideFlags: 0

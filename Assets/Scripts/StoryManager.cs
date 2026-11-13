@@ -79,7 +79,7 @@ public class StoryManager : MonoBehaviour
 
     public void Stage2()
     {
-        StartCoroutine(UpdateObjective("Take Sedwick the ball's cousin and put him inside the wardrobe"));
+        StartCoroutine(UpdateObjective("Try to turn on the TV while holding something blue"));
     }
 
     public void Stage3()

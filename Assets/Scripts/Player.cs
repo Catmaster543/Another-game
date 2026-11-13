@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] string interactText;
 
     [Header("Shared References")]
-    [SerializeField] GameObject heldObj;
+    [SerializeField] public GameObject heldObj;
     private GameObject lastObj;
     bool lookingAtObj;
     public bool consoleUnlocked = false;
@@ -84,6 +84,10 @@ public class Player : MonoBehaviour
                     {
                         Debug.LogWarning($"{obj.name} does not have the IInteractible class as its base!");
                     }
+                }
+                else
+                {
+                    uiManager.interactTextObj.SetActive(true);
                 }
 
                 StartCoroutine(HideInteraction());
