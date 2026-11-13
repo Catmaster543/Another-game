@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -78,6 +79,7 @@ public class Player : MonoBehaviour
                     {
                         if (interactable.stageNeeded <= stage)
                         {
+                            obj.layer = 6;
                             uiManager.interactTextObj.SetActive(true);
                             uiManager.UpdateInteractText(interactable.prompt);
                         }
@@ -92,11 +94,13 @@ public class Player : MonoBehaviour
                     uiManager.interactTextObj.SetActive(true);
                 }
 
+                StartCoroutine(hideObjOutline(obj));
                 StartCoroutine(HideInteraction());
                 lastObj = obj;
             }
             else
             {
+                lastObj = null;
                 lookingAtObj = false;
             }
             timer = 0;
@@ -209,6 +213,19 @@ public class Player : MonoBehaviour
         {
             rateTimer = 0;
             gameStateManager.Switch();
+        }
+    }
+
+    IEnumerator hideObjOutline(GameObject obj)
+    {
+        yield return new WaitForSeconds(0.15f);
+        if (obj != lastObj)
+        {
+            obj.layer = 0;
+        }
+        else
+        {
+            StartCoroutine(hideObjOutline(obj));
         }
     }
 }

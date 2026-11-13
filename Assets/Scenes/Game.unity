@@ -1488,7 +1488,7 @@ GameObject:
   - component: {fileID: 831471536}
   - component: {fileID: 831471535}
   - component: {fileID: 831471540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sedwick the ball's cousin
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -3560,6 +3560,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: -876546973899608171, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
+    - target: {fileID: -516098083770646512, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -466329591000292508, guid: a43f70ebfb7bcdf4893f12b1ea6bb7a9, type: 3}
       propertyPath: m_Name
       value: Close
