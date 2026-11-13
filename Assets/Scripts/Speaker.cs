@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Speaker : MonoBehaviour, IInteractable
 {
     public string prompt => $"Talk to {name}";
+    public int stageNeeded => 2;
     public void Interact(Player player)
     {
         Debug.Log("Blah blah blah");

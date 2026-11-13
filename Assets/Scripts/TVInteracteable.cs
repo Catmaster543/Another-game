@@ -9,6 +9,7 @@ public class TVInteracteable : MonoBehaviour, IInteractable
 
     #region Interacteable stuff
     public string prompt => "Turn on TV";
+    public int stageNeeded => 2;
     public void Interact(Player player)
     {
         StartCoroutine(TurnOnTv());

@@ -54,6 +54,7 @@ public class StoryManager : MonoBehaviour
     {
         Debug.Log("Progressing..");
         progress++;
+        player.stage = progress;
         if (progress <= stages.Length)
         {
             stages[progress].method.Invoke();
@@ -84,6 +85,7 @@ public class StoryManager : MonoBehaviour
     public void Stage3()
     {
         Debug.Log("Hello Stage 3");
+        player.consoleUnlocked = true;
         //Bind this void on LeManager's StoryManagers stages
         //Just make a new Stage, select LeManager as an object and select this void
     }

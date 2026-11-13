@@ -19,10 +19,13 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject heldObj;
     private GameObject lastObj;
     bool lookingAtObj;
+    public bool consoleUnlocked = false;
 
     float timer;
     float rateTimer;
     bool isHoldingObj = false;
+
+    public int stage = 0;
 
     public static Player Instance;
 
@@ -66,14 +69,16 @@ public class Player : MonoBehaviour
             GameObject obj = ShootRay();
             if (obj != null)
             {
-                uiManager.interactTextObj.SetActive(true);
                 lookingAtObj = true;
                 if (obj != lastObj)
                 {
                     if (obj.TryGetComponent<IInteractable>(out var interactable))
                     {
-                        uiManager.interactTextObj.SetActive(true);
-                        uiManager.UpdateInteractText(interactable.prompt);
+                        if (interactable.stageNeeded <= stage)
+                        {
+                            uiManager.interactTextObj.SetActive(true);
+                            uiManager.UpdateInteractText(interactable.prompt);
+                        }
                     }
                     else
                     {
@@ -128,7 +133,10 @@ public class Player : MonoBehaviour
             {
                 if (obj.TryGetComponent<IInteractable>(out var interactable))
                 {
-                    interactable.Interact(this);
+                    if (interactable.stageNeeded <= stage)
+                    {
+                        interactable.Interact(this);
+                    }
                 }
                 else
                 {
@@ -137,7 +145,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    
     IEnumerator HideInteraction()
     {
         yield return new WaitForSeconds(0.2f);
@@ -170,7 +178,7 @@ public class Player : MonoBehaviour
 
     public void ConsoleEnterInteraction()
     {
-        if (rateTimer >= 0.2f)
+        if (rateTimer >= 0.2f && consoleUnlocked)
         {
             rateTimer = 0;
             gameStateManager.Switch();
