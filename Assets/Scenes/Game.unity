@@ -167,7 +167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   interactTextObj: {fileID: 1431842402}
   uniAnimator: {fileID: 2042415693}
-  lineObjStage2: {fileID: 2141395209}
   lineLib: {fileID: 0}
   misterDialogue: {fileID: 628545929}
   objectiveText: {fileID: 1351730423}
@@ -221,12 +220,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28428423}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.71551, y: 0.74127, z: -0.98341}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.7363, y: 1.94223, z: 8.93416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1379508384}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124553630
 GameObject:
@@ -858,8 +857,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - name: Stage3.1
+    method:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 628545930}
+          m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+          m_MethodName: Stage3_1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   player: {fileID: 0}
   uiManager: {fileID: 15498016}
+  misterDialogue: {fileID: 628545929}
+  lineLib: {fileID: 1379508385}
   playerPrefab: {fileID: 6093808573900384657, guid: 86e0d42578f2407439c16c8c6f244488, type: 3}
   playerSpawn: {fileID: 124553632}
 --- !u!1 &649526608
@@ -1969,6 +1986,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4328ee1a42a914409d4e103af0daf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractibleItem
+--- !u!1 &1045458955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1045458956}
+  - component: {fileID: 1045458957}
+  m_Layer: 0
+  m_Name: Lines Stage3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1045458956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045458955}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.7363, y: 1.94223, z: 8.93416}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1379508384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1045458957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045458955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ec624d96641ec4997531c7eee1509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LineObj
+  lines:
+  - type: 0
+    text: Oh man-
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: That's quite some balls all over the place!
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
+  - type: 0
+    text: Maybe I should tidy them up to the bin.
+    activeSpeaker: {fileID: 0}
+    textSpeed: 0
+    choices: []
 --- !u!1 &1047883111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,7 +2059,6 @@ GameObject:
   - component: {fileID: 1047883114}
   - component: {fileID: 1047883112}
   - component: {fileID: 1047883117}
-  - component: {fileID: 1047883118}
   m_Layer: 0
   m_Name: TV
   m_TagString: Interactable
@@ -2096,21 +2172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TVInteracteable
   uiManager: {fileID: 15498016}
---- !u!114 &1047883118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047883111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 30.7, y: 5.61}
-  m_UseGraphicAlpha: 1
 --- !u!1 &1048212231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2861,7 +2922,10 @@ Transform:
   m_LocalPosition: {x: -10.45181, y: -1.20096, z: -9.91757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2141395208}
+  - {fileID: 1045458956}
+  - {fileID: 28428425}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1379508385
@@ -2877,6 +2941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LineLib
   linesObjStage2: {fileID: 2141395209}
+  linesObjStage3: {fileID: 1045458957}
 --- !u!1 &1428085502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,12 +4016,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141395207}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.71551, y: 0.74127, z: -0.98341}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.7363, y: 1.94223, z: 8.93416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1379508384}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2141395209
 MonoBehaviour:
@@ -4320,8 +4385,6 @@ SceneRoots:
   - {fileID: 1553756092}
   - {fileID: 186245888}
   - {fileID: 794799782}
-  - {fileID: 2141395208}
-  - {fileID: 28428425}
   - {fileID: 124553632}
   - {fileID: 1447336660}
   - {fileID: 5993332473162045369}

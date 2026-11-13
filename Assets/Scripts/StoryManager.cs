@@ -9,6 +9,8 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private Stage[] stages;
     [SerializeField] private Player player;
     [SerializeField] private UIManager uiManager;
+    [SerializeField] private MisterDialogue misterDialogue;
+    [SerializeField] private LineLib lineLib;
 
     [Header("Shared References")]
     public int progress { get; private set; } = -1;
@@ -74,7 +76,13 @@ public class StoryManager : MonoBehaviour
     {
         uiManager.uniAnimator.SetTrigger("ExitML");
         StartCoroutine(UpdateObjective("Take a look around."));
-        StartCoroutine(player.WaitForLookingAround());
+        StartCoroutine(WaitForLookingAround());
+    }
+
+    public IEnumerator WaitForLookingAround()
+    {
+        yield return new WaitForSeconds(15);
+        misterDialogue.StartDialogue(lineLib.linesObjStage2.lines);
     }
 
     public void Stage2()
@@ -84,10 +92,12 @@ public class StoryManager : MonoBehaviour
 
     public void Stage3()
     {
-        Debug.Log("Hello Stage 3");
-        player.consoleUnlocked = true;
-        //Bind this void on LeManager's StoryManagers stages
-        //Just make a new Stage, select LeManager as an object and select this void
+        misterDialogue.StartDialogue(lineLib.linesObjStage3.lines);
+    }
+
+    public void Stage3_1()
+    {
+        StartCoroutine(UpdateObjective("Clean up the marbles to the bin."));
     }
     #endregion
 }

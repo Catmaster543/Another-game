@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject interactTextObj;
     private TextMeshProUGUI interactText;
     [SerializeField] public Animator uniAnimator;
-    [SerializeField] public LineObj lineObjStage2;
     [SerializeField] public LineLib lineLib;
     [SerializeField] public MisterDialogue misterDialogue;
     [SerializeField] public TextMeshProUGUI objectiveText;
@@ -31,13 +30,7 @@ public class UIManager : MonoBehaviour
 
     public void ReBind()
     {
-        lineObjStage2 = GameObject.FindGameObjectWithTag("LineLib").GetComponent<LineLib>().linesObjStage2;
-    }
-
-    public void RegisterLineLib(LineLib oriLineLib)
-    {
-        lineLib = oriLineLib;
-        lineObjStage2 = oriLineLib.linesObjStage2;
+        
     }
 
     void Start()

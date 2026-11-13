@@ -188,10 +188,4 @@ public class Player : MonoBehaviour
             gameStateManager.Switch();
         }
     }
-
-    public IEnumerator WaitForLookingAround()
-    {
-        yield return new WaitForSeconds(15);
-        uiManager.misterDialogue.StartDialogue(uiManager.lineObjStage2.lines);
-    }
 }

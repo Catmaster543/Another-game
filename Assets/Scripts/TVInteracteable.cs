@@ -6,7 +6,7 @@ public class TVInteracteable : MonoBehaviour, IInteractable
 {
     public UIManager uiManager;
     TextMeshProUGUI tipText;
-    AudioSource staticSound;
+    public AudioSource staticSound;
 
     #region Interacteable stuff
     public string prompt => "Turn on TV";
@@ -31,9 +31,11 @@ public class TVInteracteable : MonoBehaviour, IInteractable
     
     IEnumerator TurnOnTv()
     {
-        staticSound.Play();
+        //staticSound.Play();
         yield return new WaitForSeconds(2f);
         //Play TV cutscene
+        //*yield return new WaitForSeconds(*animlenght*)
+        GameObject.FindGameObjectWithTag("MainManager").GetComponent<StoryManager>().Progress();
     }
     IEnumerator FailTvTurnOn()
     {
