@@ -128,6 +128,10 @@ public class Player : MonoBehaviour
                 //Debug.Log($"Hit {hit.collider.gameObject.name}");
                 return hit.collider.gameObject;
             }
+            //else
+            //{
+            //    Debug.Log($"Hit {hit.collider.gameObject.name}");
+            //}
         }
         //Debug.Log("Nothing hit, or the object is out of range. \n(Have you assigned the \"Interactable\" tag to the object?)");
         return null;
