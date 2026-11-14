@@ -87,7 +87,7 @@ public class StoryManager : MonoBehaviour
 
     public void Stage2()
     {
-        StartCoroutine(UpdateObjective("Try to turn on the TV while holding something blue"));
+        StartCoroutine(UpdateObjective("Try to use the PC while holding something blue"));
     }
 
     public void Stage3()
