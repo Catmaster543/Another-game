@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] public GameObject heldObj;
     private GameObject lastObj;
     bool lookingAtObj;
-    public bool consoleUnlocked = false;
+    public bool consoleUnlocked = true;
 
     float timer;
     float rateTimer;
@@ -215,6 +215,7 @@ public class Player : MonoBehaviour
     {
         if (rateTimer >= 0.2f && consoleUnlocked)
         {
+            Debug.Log("Switching.. - PLayer");
             rateTimer = 0;
             gameStateManager.Switch();
         }

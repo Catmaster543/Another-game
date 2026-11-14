@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 1079054108279505354}
   m_Layer: 0
   m_Name: Test Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   rayRange: 2
   interactText: Click to interact with
   heldObj: {fileID: 0}
-  consoleUnlocked: 0
+  consoleUnlocked: 1
   stage: 0
 --- !u!114 &1079054108279505354
 MonoBehaviour:

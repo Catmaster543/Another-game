@@ -21,6 +21,7 @@ public class GameStateManager : MonoBehaviour
 
     public void Switch()
     {
+        Debug.Log("Switching the world.. - Game state manager");
         if (currentGameState == CurrentGameState.MainWorld)
         {
             SwitchToConsoleWorld();
