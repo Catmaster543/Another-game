@@ -1090,19 +1090,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668699255}
   m_CullTransparentMesh: 1
---- !u!114 &696934286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3655000510714792010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4328ee1a42a914409d4e103af0daf3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractibleItem
-  rb: {fileID: 0}
 --- !u!65 &696934287
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5594,10 +5581,10 @@ GameObject:
   - component: {fileID: 5366159435770609167}
   - component: {fileID: 7202271454798049429}
   - component: {fileID: 696934287}
-  - component: {fileID: 696934286}
   - component: {fileID: 7202271454798049430}
+  - component: {fileID: 7202271454798049431}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Bin
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6309,7 +6296,7 @@ Transform:
   m_GameObject: {fileID: 3655000510714792010}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 6.1696053, y: 0.4150691, z: 3.061015}
+  m_LocalPosition: {x: 5, y: 0.4150691, z: 3.061015}
   m_LocalScale: {x: 68.993286, y: 68.993286, z: 68.993286}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6510,7 +6497,7 @@ Animator:
   m_GameObject: {fileID: 3655000510714792010}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 409ef4851e82b4f46aa4f4d72e34b2fa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6522,6 +6509,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7202271454798049431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655000510714792010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c3b480bcb350b4eb9ee76ad84ffb66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bin
+  uiManager: {fileID: 15498016}
 --- !u!23 &7339356831832771438
 MeshRenderer:
   m_ObjectHideFlags: 0

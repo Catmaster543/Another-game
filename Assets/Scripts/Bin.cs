@@ -2,12 +2,11 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class Bin : MonoBehaviour
+public class Bin : MonoBehaviour, IInteractable
 {
     public UIManager uiManager;
     TextMeshProUGUI tipText;
-    public AudioSource staticSound;
-
+    
     Animator binAnim;
     void Start()
     {
@@ -19,11 +18,9 @@ public class Bin : MonoBehaviour
     public string prompt => "Interact with the bin";
     public void Interact(Player player)
     {
-        binAnim.SetTrigger("Out");
-        tipText.text = "Debug";
         StartCoroutine(BinInterract());
     }
-    public int stageNeeded => 1;
+    public int stageNeeded => 0;
     //I have no clue what this is
     #endregion
     IEnumerator BinInterract()
