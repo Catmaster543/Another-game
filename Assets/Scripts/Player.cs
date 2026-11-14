@@ -18,8 +18,8 @@ public class Player : MonoBehaviour
 
     [Header("Shared References")]
     [SerializeField] public GameObject heldObj;
-    private GameObject lastObj;
-    bool lookingAtObj;
+    public GameObject lastObj; //
+    public bool lookingAtObj; //
     public bool consoleUnlocked = true;
 
     float timer;
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    uiManager.interactTextObj.SetActive(true);
+                    //uiManager.interactTextObj.SetActive(true);
                 }
 
                 StartCoroutine(hideObjOutline(obj));

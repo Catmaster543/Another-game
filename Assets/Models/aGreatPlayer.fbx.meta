@@ -22,7 +22,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -33,7 +33,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.7
+    globalScale: 0.3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -83,122 +83,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: aGreatPlayer(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Armature
-      parentName: aGreatPlayer(Clone)
-      position: {x: -0, y: 0.015899895, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
-    - name: Bone
-      parentName: Armature
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Bone.001
-      parentName: Bone
-      position: {x: -0, y: 0.00007953231, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: idk.l
-      parentName: Bone.001
-      position: {x: -0, y: 0.000059100297, z: 0}
-      rotation: {x: -0.00000002184449, y: 0.000000023147514, z: 0.68634033, w: 0.7272805}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arm.l
-      parentName: idk.l
-      position: {x: -9.909272e-12, y: 0.00006588338, z: -1.2434498e-19}
-      rotation: {x: -0.0000000020141795, y: 0.000000005918977, z: 0.028949158, w: 0.9995809}
-      scale: {x: 1, y: 1, z: 1}
-    - name: forearm.l
-      parentName: arm.l
-      position: {x: 3.1086246e-20, y: 0.000079118196, z: -1.4604525e-20}
-      rotation: {x: -1.11022296e-16, y: 4.63876e-40, z: -5.8527555e-17, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: forearm.l_end
-      parentName: forearm.l
-      position: {x: -0, y: 0.000085790816, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Bone.008
-      parentName: Bone.001
-      position: {x: -0, y: 0.000059100297, z: 0}
-      rotation: {x: 0, y: -0.000000119209275, z: -0, w: 1}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: Bone.008_end
-      parentName: Bone.008
-      position: {x: -0, y: 0.000078164936, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: idk.r
-      parentName: Bone.001
-      position: {x: -0, y: 0.000059100297, z: 0}
-      rotation: {x: -0.00000002184449, y: -0.000000023147514, z: -0.68634033, w: 0.7272805}
-      scale: {x: 1, y: 1, z: 1}
-    - name: arm.r
-      parentName: idk.r
-      position: {x: 9.909272e-12, y: 0.00006588338, z: -1.2434498e-19}
-      rotation: {x: -0.0000000020141795, y: -0.000000005918977, z: -0.028949158, w: 0.9995809}
-      scale: {x: 1, y: 1, z: 1}
-    - name: forearm.r
-      parentName: arm.r
-      position: {x: -3.1086246e-20, y: 0.000079118196, z: -1.4604525e-20}
-      rotation: {x: -1.11022296e-16, y: -4.63876e-40, z: 5.8527555e-17, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: forearm.r_end
-      parentName: forearm.r
-      position: {x: -0, y: 0.000085790816, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: pelvic.l
-      parentName: Armature
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.08388962, y: -0.083889626, z: 0.7021129, w: 0.7021129}
-      scale: {x: 1, y: 1, z: 0.99999994}
-    - name: thigh.l
-      parentName: pelvic.l
-      position: {x: 9.3258733e-20, y: 0.00003236778, z: 4.8572256e-21}
-      rotation: {x: -0.61822337, y: 0.00000012768089, z: -0.000000087305786, w: 0.78600246}
-      scale: {x: 1, y: 0.99999994, z: 0.99999994}
-    - name: calf.l
-      parentName: thigh.l
-      position: {x: 3.3753687e-19, y: 0.00012582647, z: -9.75675e-14}
-      rotation: {x: -0.008473657, y: -0.000000113567175, z: -0.0000000018381483, w: 0.9999641}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: calf.l_end
-      parentName: calf.l
-      position: {x: -0, y: 0.000112497415, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: pelvic.r
-      parentName: Armature
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.08388962, y: 0.083889626, z: -0.7021129, w: 0.7021129}
-      scale: {x: 1, y: 1, z: 0.99999994}
-    - name: thigh.r
-      parentName: pelvic.r
-      position: {x: -9.3258733e-20, y: 0.00003236778, z: 4.8572256e-21}
-      rotation: {x: -0.61822337, y: -0.00000012768089, z: 0.000000087305786, w: 0.78600246}
-      scale: {x: 1, y: 0.99999994, z: 0.99999994}
-    - name: calf.r
-      parentName: thigh.r
-      position: {x: -3.3753687e-19, y: 0.00012582647, z: -9.75675e-14}
-      rotation: {x: -0.008473657, y: 0.000000113567175, z: 0.0000000018381483, w: 0.9999641}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: calf.r_end
-      parentName: calf.r
-      position: {x: -0, y: 0.000112497415, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Cube.005
-      parentName: aGreatPlayer(Clone)
-      position: {x: -0, y: 0.033870034, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 24.472948, y: 21.612263, z: 41.822197}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -206,16 +91,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.0069999998
-    rootMotionBoneName: Armature
+    globalScale: 0.3
+    rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

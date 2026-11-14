@@ -41,7 +41,7 @@ public class StoryManager : MonoBehaviour
 
     void Start()
     {
-        player = Instantiate(playerPrefab).GetComponent<Player>();
+        player = Instantiate(playerPrefab, playerSpawn.transform.position, Quaternion.identity).GetComponent<Player>();
         player.uiManager = uiManager;
     }
 
