@@ -180,6 +180,10 @@ public class Player : MonoBehaviour
             {
                 interactibleItem.rb.isKinematic = true;
             }
+            else if (obj.TryGetComponent<MarbleInteractable>(out MarbleInteractable marbleI))
+            {
+                marbleI.rb.isKinematic = true;
+            }
             if (oldScale.x >= 2 || oldScale.y >= 2 || oldScale.z >= 2)
             {
                 oldScale.x = 2;
@@ -202,6 +206,10 @@ public class Player : MonoBehaviour
             if (heldObj.TryGetComponent<InteractibleItem>(out InteractibleItem interactibleItem))
             {
                 interactibleItem.rb.isKinematic = false;
+            }
+            else if (heldObj.TryGetComponent<MarbleInteractable>(out MarbleInteractable marbleI))
+            {
+                marbleI.rb.isKinematic = false;
             }
             GameObject droppedObj = heldObj;
             heldObj.transform.SetParent(null);

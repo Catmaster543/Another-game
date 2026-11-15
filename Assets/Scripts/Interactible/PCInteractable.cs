@@ -4,6 +4,8 @@ public class PCInteractable : MonoBehaviour, IInteractable
 {
     Animator animator;
     public GameObject sedwick;
+    public GameObject[] marbles;
+
     #region Interactable stuff
     public string prompt => "Use PC";
     public int stageNeeded => 1;
@@ -30,5 +32,15 @@ public class PCInteractable : MonoBehaviour, IInteractable
     {
        //whatcha looking for??
        //FIH
+    }
+
+    public void ReleaseMarbles()
+    {
+        Debug.Log("Releasing the marbles");
+        foreach (GameObject marble in marbles)
+        {
+            Debug.Log($"Releasing {marble.name}");
+            marble.SetActive(true);
+        }
     }
 }

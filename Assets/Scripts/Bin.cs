@@ -10,7 +10,6 @@ public class Bin : MonoBehaviour, IInteractable
     Animator binAnim;
     void Start()
     {
-        //Get the Animator attached to the GameObject you are intending to animate.
         binAnim = gameObject.GetComponent<Animator>();
         tipText = uiManager.tipText;
     }
@@ -18,10 +17,24 @@ public class Bin : MonoBehaviour, IInteractable
     public string prompt => "Interact with the bin";
     public void Interact(Player player)
     {
-        StartCoroutine(BinInterract());
+        if (player.heldObj != null)
+        {
+            if (player.heldObj.TryGetComponent<MarbleInteractable>(out MarbleInteractable marble) == true)
+            {
+                marble.transform.parent = gameObject.transform;
+                marble.transform.position = gameObject.transform.position;
+                marble.transform.position = new Vector3(marble.transform.position.x + Random.Range(0, 0.1f), marble.transform.position.y, marble.transform.position.z + Random.Range(0, 0.1f));
+                marble.rb.isKinematic = false;
+                player.heldObj = null;
+                player.isHoldingObj = false;
+            }
+        }
+        else
+        {
+            StartCoroutine(BinInterract());
+        }
     }
     public int stageNeeded => 0;
-    //I have no clue what this is
     #endregion
     IEnumerator BinInterract()
     {
