@@ -12,6 +12,7 @@ public class PCInteractable : MonoBehaviour, IInteractable
         if (player.heldObj == sedwick)
         {
             Destroy(player.heldObj);
+            player.isHoldingObj = false;
             animator.SetTrigger("Success");
         }
         else
@@ -27,6 +28,7 @@ public class PCInteractable : MonoBehaviour, IInteractable
 
     void Update()
     {
-        
+       //whatcha looking for??
+       //FIH
     }
 }

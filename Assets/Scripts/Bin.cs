@@ -31,4 +31,4 @@ public class Bin : MonoBehaviour, IInteractable
     }
 }
 
-//I really don't know what you expected
+//I really don't know what you expected (godaym it works)

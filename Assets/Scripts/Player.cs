@@ -21,10 +21,10 @@ public class Player : MonoBehaviour
     public GameObject lastObj; //
     public bool lookingAtObj; //
     public bool consoleUnlocked = true;
-
+    
     float timer;
     float rateTimer;
-    bool isHoldingObj = false;
+    public bool isHoldingObj = false;
 
     public int stage = 0;
 
