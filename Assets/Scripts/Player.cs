@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
             droppedObj.transform.localScale = oldScale;
         }
     }
-
+    
     public void ConsoleEnterInteraction()
     {
         if (rateTimer >= 0.2f && consoleUnlocked)
