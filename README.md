@@ -1,7 +1,7 @@
 # 🗁Another-game
 𝐍𝐨𝐰 𝐥𝐨𝐚𝐝𝐢𝐧𝐠. . .\
 Yet another game, what could go wrong? .... yeah, that's what the dave said too, before getting sucked into his work in progress project.\
-Now he's stuck as one of the most useless NPCs you can imagine, he can't even exit his room! Or can he... sure, he's a good game developer, but there was no true
+Now he's stuck as one of the most useless NPCs you can imagine, he can't even exit his room! Or can he... sure, he's a good game-dev, but there was no true
 game testing done to this game... maybe he can find some of his coding mistakes, and use them to try to get out...
 
 ## 🗁AI usage decleration
@@ -22,6 +22,14 @@ Basic buttons\
 › D - Right\
 < / >
 
+### Intro animation
+Somewhat explains the main premise\
+› kicks off the story
+
+### Introduction dialog
+› You learn some stuff about the story\
+› You learn your first objective
+
 ### Pick up Items
 › You can pick up some items\
 › You can carry the items around\
@@ -32,17 +40,18 @@ Basic buttons\
 › The items will.. levitate.. where you left them\
 › You can drop items by pressing 'Q'
 
-### Intro animation
-Somewhat explains the main premise\
-› kicks off the story
-
-### Introduction dialog
-› You learn some stuff about the story\
-› You learn your first objective
+### Interact with stuff
+› Interactions other than picking up objects now exist\
+› Some interactions now need special conditions to be met for different outcomes
 
 ### Second objective
 › You get more dialog about the situation\
 › You get another objective - this time more player imput needed
+
+### Animated stuff
+› A lot of interactions are now animated\
+› › Stuff moves\
+› › Stuff makes other stuff appear
 
 < / >
 ## 🗁How to play
@@ -52,7 +61,7 @@ This time, we figured the game will work better downloaded\
 ~~WEB or DOWNLOAD~~\
 ~~› WEB - May be bit wonky~~\
 › DOWNLOAD - More stable\
-https://cat-master543.itch.io/another-game
+https://cat-master543.itch.io/another-game \
 < / >
 
 ## 🗁Who to thank for this masterpiece:
