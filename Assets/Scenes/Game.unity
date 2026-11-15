@@ -1603,6 +1603,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - name: Stage4
+    method:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 628545930}
+          m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+          m_MethodName: Stage4
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Stage5
+    method:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 628545930}
+          m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+          m_MethodName: Stage5
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   player: {fileID: 0}
   uiManager: {fileID: 15498016}
   misterDialogue: {fileID: 628545929}
@@ -8990,7 +9022,7 @@ Transform:
   m_GameObject: {fileID: 7178114112402251434}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -2.6368258, y: 1.3175429, z: 0.5895273}
+  m_LocalPosition: {x: -2.6368258, y: 1.318, z: 1.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10157,6 +10189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bin
   uiManager: {fileID: 15498016}
+  consoleDevice: {fileID: 395263077263054076, guid: 09e98532c360b20409371bb7128489c4, type: 3}
 --- !u!64 &7202271454798049432
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class PCSuccessPost : StateMachineBehaviour
     {
         PCInteractable pci = animator.gameObject.GetComponent<PCInteractable>();
         pci.ReleaseMarbles();
-        Debug.Log("Release the marbles");
+        GameObject.FindGameObjectWithTag("MainManager").GetComponent<StoryManager>().Progress();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

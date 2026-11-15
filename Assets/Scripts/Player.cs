@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     [Header("Scene References")]
     [SerializeField] Transform holdingSpot;
-    [SerializeField] StoryManager storyManager;
+    [SerializeField] public StoryManager storyManager;
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] public UIManager uiManager;
 
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] public GameObject heldObj;
     public GameObject lastObj; //
     public bool lookingAtObj; //
-    public bool consoleUnlocked = true;
+    public bool consoleUnlocked = false;
     
     float timer;
     float rateTimer;

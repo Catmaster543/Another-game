@@ -85,19 +85,36 @@ public class StoryManager : MonoBehaviour
         misterDialogue.StartDialogue(lineLib.linesObjStage2.lines);
     }
 
+    public IEnumerator WaitForStage3()
+    {
+        yield return new WaitForSeconds(2f);
+        misterDialogue.StartDialogue(lineLib.linesObjStage3.lines);
+    }
+
     public void Stage2()
     {
         StartCoroutine(UpdateObjective("Try to use the PC while holding something blue"));
     }
 
+
     public void Stage3()
     {
-        misterDialogue.StartDialogue(lineLib.linesObjStage3.lines);
+        StartCoroutine(WaitForStage3());
     }
 
     public void Stage3_1()
     {
         StartCoroutine(UpdateObjective("Clean up the marbles to the bin."));
+    }
+
+    public void Stage4()
+    {
+        StartCoroutine(UpdateObjective("Pick up the strange device."));
+    }
+
+    public void Stage5()
+    {
+        StartCoroutine(UpdateObjective("Press F to enter the Console World."));
     }
     #endregion
 }

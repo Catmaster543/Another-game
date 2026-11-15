@@ -406,7 +406,7 @@ MonoBehaviour:
   heldObj: {fileID: 0}
   lastObj: {fileID: 0}
   lookingAtObj: 0
-  consoleUnlocked: 1
+  consoleUnlocked: 0
   isHoldingObj: 0
   stage: 0
 --- !u!114 &1142766683995208964
